@@ -183,6 +183,8 @@ def main():
 		# Extract inputs
 		data = np.loadtxt(sys.argv[1], delimiter=",", skiprows=1)
 		q = float(sys.argv[2])
+		if q <= 1:
+			print("Q must be greater than 1.")
 		alpha = float(sys.argv[3])
 		sigma = float(sys.argv[4])
 		t = int(sys.argv[5])
