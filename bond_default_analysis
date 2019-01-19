@@ -82,10 +82,7 @@ def q_alpha(p=None, y=None, r=None,q=None, alpha=None, sigma=None, t=None):
 		is_defaulted = np.nonzero(pre_prices[iter,] < r)
 		if len(is_defaulted[0]) > 0:
 			# Remove defaulted paths
-			for index in sorted(is_defaulted[0], reverse=True):
-				omega_list = omega.tolist()
-				del omega_list[index]
-				omega = np.array(omega_list)
+			omega = np.delete(omega, is_defaulted[0])
 			pre_prices = np.delete(pre_prices, is_defaulted[0], 1)
 			npaths = npaths - len(is_defaulted[0])
 			num_defaults += len(is_defaulted[0])
