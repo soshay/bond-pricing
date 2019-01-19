@@ -9,7 +9,8 @@ def q_alpha(p=None, y=None, r=None,q=None, alpha=None, sigma=None, t=None):
 
 	This method implements the q-alpha bond survival model, as
 	described by Stanford Prof. Lisa Borland here:
-	<https://arxiv.org/pdf/cond-mat/0501395.pdf>.
+	<https://arxiv.org/pdf/cond-mat/0501395.pdf>. Adapted
+	from code provided in Stanford's MSE 444 course.
 	
 	This method runs a 1000 path Monte-Carlo simulation to 
 	generate the output value.
@@ -98,7 +99,7 @@ def closed_form_price(omega=None, t=None, q=None):
 
 	'''Closed form bond pricing update solution.
 	
-	See <https://arxiv.org/pdf/cond-mat/0501395.pdf> for details.
+	Adapted from code provided in Stanford's MSE 444 course.
 	'''
 
 	gamma_top = gamma((1 / (q - 1) - 0.5))
